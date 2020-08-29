@@ -26,16 +26,18 @@ class LinkedList(object):
     	
 		
 	# O(N)
-	def insertEnd(self, data):
-	
-		self.size = self.size + 1
-		newNode = Node(data)
-		actualNode = self.head
-		
-		while actualNode.nextNode is not None:
-			actualNode = actualNode.nextNode
-	
-		actualNode.nextNode = newNode
+    	def insertEnd(self,data):
+        	self.size=self.size+1
+       	 	newNode=Node(data)
+        	
+        	actualNode=self.head
+        
+        	if not self.head:
+            		self.head=newNode
+        	else:
+            		while actualNode.nextNode is not None:
+                		actualNode=actualNode.nextNode
+           	 		actualNode.nextNode=newNode
 
 	def remove(self, data):
 	
